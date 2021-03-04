@@ -1,6 +1,6 @@
 {
-  "name": "slack_notify_actions",
-  "version": "1.0.1",
+  "name": "slack_notify",
+  "version": "1.1",
   "private": true,
   "description": "slack notification action.",
   "main": "lib/main.js",

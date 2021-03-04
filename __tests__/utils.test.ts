@@ -67,14 +67,14 @@ describe('utils test', () => {
 
     it('multiple newline types slackUsernames', () => {
       const slackUsernames = `
-      ry-itto,ito ryoya\ngithub,octocat\r\ngitlab,fox
+      ry-itto,ito ryoya\ngithub,octocat\r\ngitlab,fox\rasarco,ale
       `
-      const body = 'ry-itto, github, gitlab'
+      const body = 'ry-itto, github, gitlab, asarco'
       const result = replaceGitHubUsernameWithSlackUsername(
         body,
         slackUsernames
       )
-      expect(result).toBe('<@ito ryoya>, <@octocat>, <@fox>')
+      expect(result).toBe('<@ito ryoya>, <@octocat>, <@fox>, <@ale>')
     })
   })
 })

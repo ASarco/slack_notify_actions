@@ -15,7 +15,7 @@
     SLACK_USERNAME: 'Alex Sarco'
     SLACK_GITHUB_USER_PAIRS: ${{ secrets.SLACK_USER }}
     TITLE: ':tada: Success :tada:'
-    BODY: 'Hello World!'
+    BODY: "Hello World!"  
     COLOR: '#4D88C2'
 ```
 
@@ -66,4 +66,4 @@
 
 - `USE_MARKDOWN`
   
-  Allow using markdown on the body of the message. Default true.
+  Allow using markdown on the body of the message. Default true. Use double quotes in the body if you want to add markdown.
