@@ -101,14 +101,17 @@ export const replaceGitHubUsernameWithSlackUsername = (
   usernames: string
 ): string => {
   const githubToSlack =
-    usernames.replace(/\r/g, '\n').split('\n').reduce<{[key: string]: string}>((result, row) => {
-      const [key, value] = row.split(',')
-      if (!value) {
-        return result
-      }
-      result[key.trim()] = value.trim()
-      return result
-    }, {}) ?? {}
+    usernames.replace(/\r/g, '\n')
+        .split('\n')
+        .reduce<{[key: string]: string}>((result, row) => {
+          const [key, value] = row.split(',')
+          if (!value) {
+            return result
+          }
+          result[key.trim()] = value.trim()
+          return result
+        },
+            {}) ?? {}
 
   for (const [key, value] of Object.entries(githubToSlack)) {
     const regExpKeyWithToken = `<@${key}>`
@@ -117,7 +120,7 @@ export const replaceGitHubUsernameWithSlackUsername = (
     text = text.replace(
       new RegExp(
         `${regExpKeyWithToken}|${regExpKeyWithMention}|${regExpOnlyKey}`,
-        'g'
+        'gi'
       ),
       `<@${value}>`
     )

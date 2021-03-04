@@ -69,7 +69,7 @@ describe('utils test', () => {
       const slackUsernames = `
       ry-itto,ito ryoya\ngithub,octocat\r\ngitlab,fox\rasarco,ale
       `
-      const body = 'ry-itto, github, gitlab, asarco'
+      const body = 'ry-itto, github, gitlab, ASarco'
       const result = replaceGitHubUsernameWithSlackUsername(
         body,
         slackUsernames
