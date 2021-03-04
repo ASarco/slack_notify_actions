@@ -23,5 +23,5 @@ jobs:
           SLACK_GITHUB_USER_PAIRS: ${{ secrets.SLACK_USER }}
           TITLE: ':tada: Congratulations ${{ github.actor }} :tada:'
           USE_MARKDOWN: true,
-          BODY: 'Your recent action _${{ github.workflow }}_ has been built succesfully! \n >This is *markdown* :partyparrot:'
+          BODY: "Your recent action _${{ github.workflow }}_ has been built succesfully! \n >This is *markdown* :partyparrot:"
           COLOR: '#FF0000'    
