@@ -1,6 +1,6 @@
-name: 'slack_notify_actions'
+name: 'slack_notify'
 description: 'slack notification action.'
-author: 'ry-itto'
+author: 'asarco'
 runs:
   using: 'node12'
   main: 'dist/index.js'

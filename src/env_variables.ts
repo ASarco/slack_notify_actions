@@ -13,6 +13,7 @@ interface ProcessEnvVariables {
   attachmentsTitleURL?: string
   attachmentsBody?: string
   attachmentsColor: string
+  attachmentsMrkdn?: string
 }
 
 export const readEnvVariables = (): EnvVariables => {
@@ -47,7 +48,8 @@ export const readEnvVariables = (): EnvVariables => {
     attachmentsTitle: process.env.TITLE ?? '',
     attachmentsTitleURL: process.env.TITLE_URL ?? '',
     attachmentsBody: process.env.BODY ?? '',
-    attachmentsColor: process.env.COLOR ?? 'green'
+    attachmentsColor: process.env.COLOR ?? 'green',
+    attachmentsMrkdn: process.env.USE_MARKDOWN ?? 'true'
   }
 }
 
