@@ -7,6 +7,7 @@ import {
 } from '@slack/types'
 import {IncomingWebhookSendArguments} from '@slack/webhook'
 import {Agent} from 'http'
+import * as core from "@actions/core";
 
 interface CreateAttachmentArgumentType {
   blocks?: (KnownBlock | Block)[]
@@ -117,7 +118,7 @@ export const replaceGitHubUsernameWithSlackUsername = (
     const regExpKeyWithToken = `<@${key}>`
     const regExpKeyWithMention = `(?!<)@${key}`
     const regExpOnlyKey = key
-    console.log(`Github: ${key} Slack: ${value} Text: ${text}`)
+    core.info(`Github: ${key} Slack: ${value} Text: ${text}`)
     text = text.replace(
       new RegExp(
         `${regExpKeyWithToken}|${regExpKeyWithMention}|${regExpOnlyKey}`,
