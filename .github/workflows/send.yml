@@ -1,0 +1,25 @@
+name: Send a test message
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  notify:
+    name: Send Slack message 
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os:
+          - self-hosted-ubuntu-2004
+    steps:
+      - id: success
+        name: Send success message
+        uses: asarco/slack_notify@1.1
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_ICON_URL: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
+          SLACK_USERNAME: 'GitHub'
+          SLACK_GITHUB_USER_PAIRS: ${{ secrets.SLACK_USER }}
+          TITLE: ':tada: Congratulations ${{ github.actor }} :tada:'
+          BODY: 'Your recent action ${{ github.workflow }} has been built succesfully!\n >This is *markdwon* :partyparrot:'
+          COLOR: '#FF0000'    
