@@ -8,18 +8,18 @@
 
 ```yaml
 - name: Slack Notification
-  uses: ry-itto/slack_notify_actions@1.0.1
+  uses: asarco/slack_notify@1.0.0
   env:
     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-    SLACK_ICON_URL: 'https://github.com/ry-itto.png'
-    SLACK_USERNAME: 'Capicapi'
+    SLACK_ICON_URL: 'https://github.com/imgarena.png'
+    SLACK_USERNAME: 'Alex Sarco'
     SLACK_GITHUB_USER_PAIRS: ${{ secrets.SLACK_USER }}
     TITLE: ':tada: Success :tada:'
-    BODY: 'ry-itto'
+    BODY: 'Hello World!'
     COLOR: '#4D88C2'
 ```
 
-![スクリーンショット 2020-05-19 16 34 42](https://user-images.githubusercontent.com/30540303/82301310-03518c00-99f3-11ea-966e-f12fee0c879a.png)
+!(https://user-images.githubusercontent.com/30540303/82301310-03518c00-99f3-11ea-966e-f12fee0c879a.png)
 
 ### Environment Variables
 #### Required
@@ -43,13 +43,14 @@
 
     Like this.
   ```csv
-  ry-itto,UNJE44KPC
+  asarco,ABCDEFJ
+  paul,ZXCVBNMK
   ...
   ```
 
   ※ You need to specify a user ID when connecting Slack users.
   
-  ![スクリーンショット 2020-05-19 16 46 02](https://user-images.githubusercontent.com/30540303/82301203-de5d1900-99f2-11ea-92ca-f23988c24650.png)
+  ![What is this](https://user-images.githubusercontent.com/30540303/82301203-de5d1900-99f2-11ea-92ca-f23988c24650.png)
   
 - `TITLE`
 
@@ -62,3 +63,7 @@
 - `COLOR`
 
   Attachment color. This will be shown left side of message.
+
+- `USE_MARKDOWN`
+  
+  Allow using markdown on the body of the message. Default true.
