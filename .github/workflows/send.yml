@@ -23,11 +23,9 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_ICON_URL: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
           SLACK_USERNAME: 'GitHub'
-          SLACK_GITHUB_USER_PAIRS: %{{ secrets.SLACK_USER }}
+          SLACK_GITHUB_USER_PAIRS: ${{ secrets.SLACK_USER }}
           TITLE: ':tada: Congratulations ${{ github.actor }} :tada:'
           USE_MARKDOWN: true,
           BODY: "Your recent action _*${{ github.workflow }}*_ has been built successfully! \n>This is *markdown* :partyparrot:"
           COLOR: '#FF0000'
-      - id: output
-        name: Show output
-        run: echo "The body was ${{ steps.success.outputs.body }}"
+
