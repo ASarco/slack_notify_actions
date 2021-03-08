@@ -8,19 +8,18 @@
 
 ```yaml
 - name: Slack Notification
-  uses: asarco/slack_notify@1.0.0
+  uses: asarco/slack_notify@v1.1.3
   env:
     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     SLACK_ICON_URL: 'https://github.com/imgarena.png'
-    SLACK_USERNAME: 'Alex Sarco'
+    SLACK_USERNAME: 'IMG Arena'
     SLACK_GITHUB_USER_PAIRS: ${{ secrets.SLACK_USER }}
-    TITLE: ':tada: Success :tada:'
-    BODY: "Hello World!"  
-    COLOR: '#4D88C2'
+    TITLE: ':tada: Congratulations ${{ github.actor }} :tada:'
+    BODY: "Your recent action _*${{ github.workflow }}*_ has been built successfully! \n>This is *markdown* :partyparrot:"
+    COLOR: '#FF0000'
 ```
 
-!(https://user-images.githubusercontent.com/30540303/82301310-03518c00-99f3-11ea-966e-f12fee0c879a.png)
-
+![img.png](img.png)
 ### Environment Variables
 #### Required
 - `SLACK_WEBHOOK_URL`
@@ -40,6 +39,7 @@
 
   An environment variable to use when you want to connect a GitHub user to a Slack user.
   Save it in CSV format and replace it with a specific user name when it exists.
+  Github usernames are case-insensitive.
 
     Like this.
   ```csv
