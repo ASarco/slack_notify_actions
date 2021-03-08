@@ -4540,7 +4540,7 @@ exports.replaceGitHubUsernameWithSlackUsername = (text, usernames) => {
         const regExpKeyWithMention = `(?!<)@${key}`;
         const regExpOnlyKey = key;
         text = text.replace(new RegExp(`${regExpKeyWithToken}|${regExpKeyWithMention}|${regExpOnlyKey}`, 'gi'), `<@${value}>`);
-        //core.info(`Github: ${key} Slack: ${value} Text: ${text}`)
+        core.info(`Github: ${key} Slack: ${value} Text: ${text}`)
     }
     return text;
 };
