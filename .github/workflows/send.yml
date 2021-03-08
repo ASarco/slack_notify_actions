@@ -23,7 +23,12 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_ICON_URL: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
           SLACK_USERNAME: 'GitHub'
-          SLACK_GITHUB_USER_PAIRS: ${{ secrets.SLACK_USER }}
+          SLACK_GITHUB_USER_PAIRS: |- 
+            --asarco,U01CXS1NVDG
+            --paulfairless,UMVKJNY64
+            --noe-caratini,U01966NRYTG
+            --martarey-benito,U01A7JL0Q5R
+            --kevinmcrofts,U01NW807C66
           TITLE: ':tada: Congratulations ${{ github.actor }} :tada:'
           USE_MARKDOWN: true,
           BODY: "Your recent action _*${{ github.workflow }}*_ has been built succesfully! \n>This is *markdown* :partyparrot:"
