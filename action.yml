@@ -4,6 +4,3 @@ author: 'asarco'
 runs:
   using: 'node12'
   main: 'dist/index.js'
-outputs:
-  bnody: # replaced body
-    description: 'Replaced body'

@@ -60,8 +60,6 @@ async function run(): Promise<void> {
     username: slackUsername,
     attachments: [attachments]
   })
-  core.info(body)
-  core.setOutput("body", body);
 
   await webhook.send(args)
 

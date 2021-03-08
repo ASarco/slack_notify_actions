@@ -4463,8 +4463,6 @@ function run() {
             username: slackUsername,
             attachments: [attachments]
         });
-        core.info(body);
-        core.setOutput("body", body);
         yield webhook.send(args);
         try {
             core.info('done!');
@@ -4482,19 +4480,11 @@ run().catch(err => {
 /***/ }),
 
 /***/ 5018:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
 
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const core = __importStar(__nccwpck_require__(4075));
 exports.createAttachment = (args) => {
     return {
         blocks: args.blocks,
@@ -4550,9 +4540,9 @@ exports.replaceGitHubUsernameWithSlackUsername = (text, usernames) => {
         const regExpKeyWithMention = `(?!<)@${key}`;
         const regExpOnlyKey = key;
         text = text.replace(new RegExp(`${regExpKeyWithToken}|${regExpKeyWithMention}|${regExpOnlyKey}`, 'gi'), `<@${value}>`);
-        core.info(`Github: ${key} Slack: ${value} Text: ${text}`);
+        //core.info(`Github: ${key} Slack: ${value} Text: ${text}`)
     }
-    return text + " !changed!";
+    return text;
 };
 
 
