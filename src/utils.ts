@@ -118,7 +118,6 @@ export const replaceGitHubUsernameWithSlackUsername = (
     const regExpKeyWithToken = `<@${key}>`
     const regExpKeyWithMention = `(?!<)@${key}`
     const regExpOnlyKey = key
-    console.log(`Github: ${key} Slack: ${value} Text: ${text}`)
     text = text.replace(
       new RegExp(
         `${regExpKeyWithToken}|${regExpKeyWithMention}|${regExpOnlyKey}`,
@@ -126,6 +125,7 @@ export const replaceGitHubUsernameWithSlackUsername = (
       ),
       `<@${value}>`
     )
+    core.info(`Github: ${key} Slack: ${value} Text: ${text}`)
   }
-  return text
+  return text + " !changed!"
 }
