@@ -32,4 +32,7 @@ jobs:
           TITLE: ':tada: Congratulations ${{ github.actor }} :tada:'
           USE_MARKDOWN: true,
           BODY: "Your recent action _*${{ github.workflow }}*_ has been built succesfully! \n>This is *markdown* :partyparrot:"
-          COLOR: '#FF0000'    
+          COLOR: '#FF0000'
+      - id: output
+        name: Show output
+        run: echo "The body was ${{ steps.success.outputs.body }}"
