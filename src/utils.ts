@@ -125,7 +125,7 @@ export const replaceGitHubUsernameWithSlackUsername = (
       ),
       `<@${value}>`
     )
-    //core.info(`Github: ${key} Slack: ${value} Text: ${text}`)
+    core.info(`Github: ${key} Slack: ${value} Text: ${text}`)
   }
   return text
 }
