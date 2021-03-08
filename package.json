@@ -1,6 +1,6 @@
 {
   "name": "slack_notify",
-  "version": "1.1",
+  "version": "v1.1.2",
   "private": true,
   "description": "slack notification action.",
   "main": "lib/main.js",
@@ -22,7 +22,7 @@
     "node",
     "setup"
   ],
-  "author": "ry-itto",
+  "author": "asarco",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.6",
