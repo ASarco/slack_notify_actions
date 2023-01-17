@@ -15,7 +15,7 @@ jobs:
     steps:
       - id: success
         name: Send success message
-        uses: asarco/slack_notify@v1.1.3
+        uses: asarco/slack_notify@v1.1.4
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_ICON_URL: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
