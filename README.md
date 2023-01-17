@@ -8,7 +8,7 @@
 
 ```yaml
 - name: Slack Notification
-  uses: asarco/slack_notify@v1.1.3
+  uses: IMGARENA/slack_notify@v1.1.4
   env:
     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     SLACK_ICON_URL: 'https://github.com/imgarena.png'
