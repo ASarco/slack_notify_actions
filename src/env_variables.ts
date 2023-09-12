@@ -8,6 +8,7 @@ interface ProcessEnvVariables {
   webhookURL: string
   slackGithubPairs?: string
   slackIconURL?: string
+  slackChannel?: string
   slackUsername?: string
   attachmentsTitle?: string
   attachmentsTitleURL?: string
@@ -21,6 +22,7 @@ export const readEnvVariables = (): EnvVariables => {
   const githubActor = process.env.GITHUB_ACTOR
   const githubRef = process.env.GITHUB_REF
   const githubEvent = process.env.GITHUB_EVENT_NAME
+  const slackChannel = process.env.SLACK_CHANNEL
 
   if (!webhookURL) {
     throw Error(
@@ -44,6 +46,7 @@ export const readEnvVariables = (): EnvVariables => {
     githubEvent,
     slackIconURL: process.env.SLACK_ICON_URL,
     slackGithubPairs: process.env.SLACK_GITHUB_USER_PAIRS,
+    slackChannel: slackChannel ? slackChannel : undefined,
     slackUsername: process.env.SLACK_USERNAME,
     attachmentsTitle: process.env.TITLE ?? '',
     attachmentsTitleURL: process.env.TITLE_URL ?? '',

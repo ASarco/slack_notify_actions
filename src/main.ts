@@ -17,24 +17,28 @@ async function run(): Promise<void> {
     slackIconURL,
     slackGithubPairs,
     slackUsername,
+    slackChannel,
     attachmentsTitle,
     attachmentsTitleURL,
     attachmentsBody,
     attachmentsColor,
     attachmentsMrkdn
   } = readEnvVariables()
+
   const title = replaceGitHubUsernameWithSlackUsername(
     attachmentsTitle ?? '',
     slackGithubPairs ?? ''
   )
+
   const body = replaceGitHubUsernameWithSlackUsername(
     attachmentsBody ?? '',
     slackGithubPairs ?? ''
   )
 
   const webhook = new slack.IncomingWebhook(webhookURL)
+
   const attachments: MessageAttachment = createAttachment({
-    mrkdwnIn: attachmentsMrkdn ? ["text"] : [],
+    mrkdwnIn: attachmentsMrkdn ? ['text'] : [],
     color: attachmentsColor,
     authorName: githubActor,
     authorLink: `https://github.com/${githubActor}`,
@@ -55,10 +59,12 @@ async function run(): Promise<void> {
       }
     ]
   })
+
   const args = createIncomingWebhookSendArguments({
     iconUrl: slackIconURL,
     username: slackUsername,
-    attachments: [attachments]
+    attachments: [attachments],
+    channel: slackChannel
   })
 
   await webhook.send(args)
