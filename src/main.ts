@@ -71,7 +71,7 @@ async function run(): Promise<void> {
 
   try {
     core.info('done!')
-  } catch (error) {
+  } catch (error: any) {
     core.setFailed(error.message)
   }
 }
