@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         os:
-          - self-hosted-ubuntu-2004
+          - ubuntu-latest
         node-version: [ 18.14.x ]
 
     steps:
