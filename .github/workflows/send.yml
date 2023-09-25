@@ -2,16 +2,18 @@ name: Send a test message
 
 on:
   workflow_dispatch:
-  
+
 jobs:
   notify:
-    name: Send Slack message 
-    runs-on: ubuntu-latest
-    #runs-on: ${{ matrix.os }}
-    #strategy:
-    #  matrix:
-    #    os:
-    #      - self-hosted-ubuntu-2004
+    name: Send Slack message
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        node-version: [ 18.14.x ]
+
     steps:
       - id: success
         name: Send success message
@@ -21,6 +23,7 @@ jobs:
           SLACK_ICON_URL: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
           SLACK_USERNAME: 'GitHub'
           SLACK_GITHUB_USER_PAIRS: ${{ secrets.SLACK_USER }}
+          SLACK_CHANNEL: 'tech_devops_alerts'
           TITLE: ':tada: Congratulations ${{ github.actor }} :tada:'
           USE_MARKDOWN: true,
           BODY: "Your recent action _*${{ github.workflow }}*_ has been built successfully! \n>This is *markdown* :partyparrot:"

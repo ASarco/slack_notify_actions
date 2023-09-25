@@ -7,7 +7,7 @@ import {
 } from '@slack/types'
 import {IncomingWebhookSendArguments} from '@slack/webhook'
 import {Agent} from 'http'
-import * as core from "@actions/core";
+import * as core from '@actions/core'
 
 interface CreateAttachmentArgumentType {
   blocks?: (KnownBlock | Block)[]
@@ -102,17 +102,17 @@ export const replaceGitHubUsernameWithSlackUsername = (
   usernames: string
 ): string => {
   const githubToSlack =
-    usernames.replace(/\r/g, '\n')
-        .split('\n')
-        .reduce<{[key: string]: string}>((result, row) => {
-          const [key, value] = row.split(',')
-          if (!value) {
-            return result
-          }
-          result[key.trim()] = value.trim()
+    usernames
+      .replace(/\r/g, '\n')
+      .split('\n')
+      .reduce<{[key: string]: string}>((result, row) => {
+        const [key, value] = row.split(',')
+        if (!value) {
           return result
-        },
-            {}) ?? {}
+        }
+        result[key.trim()] = value.trim()
+        return result
+      }, {}) ?? {}
 
   for (const [key, value] of Object.entries(githubToSlack)) {
     const regExpKeyWithToken = `<@${key}>`

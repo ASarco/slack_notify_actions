@@ -34,6 +34,10 @@
 - `SLACK_USERNAME`
 
   Username.
+
+- `CHANNEL_NAME`
+  
+  Channel name
   
 - `SLACK_GITHUB_USER_PAIRS`
 

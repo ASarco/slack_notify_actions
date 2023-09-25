@@ -1,4 +1,4 @@
-import {replaceGitHubUsernameWithSlackUsername} from '../src/utils'
+import {replaceGitHubUsernameWithSlackUsername} from '../utils'
 
 describe('utils test', () => {
   describe('replaceGitHubUsernameWithSlackUsername', () => {
