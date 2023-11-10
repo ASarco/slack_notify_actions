@@ -2,6 +2,10 @@ name: Send a test message
 
 on:
   workflow_dispatch:
+    inputs:
+      channel:
+        description: 'Slack channel name'
+        required: true
 
 jobs:
   notify:
@@ -23,7 +27,7 @@ jobs:
           SLACK_ICON_URL: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
           SLACK_USERNAME: 'GitHub'
           SLACK_GITHUB_USER_PAIRS: ${{ secrets.SLACK_USER }}
-          SLACK_CHANNEL: 'tech_devops_alerts'
+          SLACK_CHANNEL: ${{ inputs.channel }}
           TITLE: ':tada: Congratulations ${{ github.actor }} :tada:'
           USE_MARKDOWN: true,
           BODY: "Your recent action _*${{ github.workflow }}*_ has been built successfully! \n>This is *markdown* :partyparrot:"
