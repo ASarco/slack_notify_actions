@@ -21,7 +21,7 @@ jobs:
     steps:
       - id: success
         name: Send success message
-        uses: IMGARENA/slack_notify@v1.1.4
+        uses: IMGARENA/slack_notify@v1.1.2
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_ICON_URL: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
