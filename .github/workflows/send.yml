@@ -26,7 +26,7 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_ICON_URL: 'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
           SLACK_USERNAME: 'GitHub'
-          SLACK_GITHUB_USER_PAIRS: ${{ secrets.SLACK_USER }}
+          #SLACK_GITHUB_USER_PAIRS: ${{ secrets.SLACK_USER }}
           SLACK_CHANNEL: ${{ inputs.channel }}
           TITLE: ':tada: Congratulations ${{ github.actor }} :tada:'
           USE_MARKDOWN: true,
